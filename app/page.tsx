@@ -10,7 +10,7 @@ export default function OverviewPage() {
   const latest = getLatestTransactions(data, 5);
 
   return (
-    <main className="min-h-0 flex-1 px-10 pb-16 pt-10">
+    <main className="min-h-0 flex-1 px-4 pb-12 pt-8 sm:px-6 sm:pb-16 sm:pt-10 lg:px-10">
       <h1 className="text-preset-1 font-bold tracking-tight text-grey-900">
         Overview
       </h1>
