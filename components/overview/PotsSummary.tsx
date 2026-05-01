@@ -17,7 +17,7 @@ export function PotsSummary({ pots }: PotsSummaryProps) {
         <div>
           <h2 className="text-preset-2 text-grey-900">Pots</h2>
           <p className="mt-4 text-preset-4 text-grey-500">Total saved</p>
-          <p className="mt-2 text-preset-1 font-bold tracking-tight text-grey-900">
+          <p className="mt-2 text-preset-1 font-bold tracking-tight text-grey-900 tabular-nums break-words">
             {formatCurrency(totalSaved)}
           </p>
         </div>
@@ -34,9 +34,9 @@ export function PotsSummary({ pots }: PotsSummaryProps) {
           const barColor = getThemeColor(pot.theme);
           return (
             <li key={pot.name}>
-              <div className="flex items-center justify-between gap-4">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                 <span className="text-preset-4-bold text-grey-900">{pot.name}</span>
-                <div className="text-preset-4 text-right">
+                <div className="text-preset-4 text-left tabular-nums sm:text-right">
                   <span className="font-bold text-secondary-red">
                     {formatCurrency(-pot.total)}
                   </span>

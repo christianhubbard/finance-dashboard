@@ -67,7 +67,7 @@ export function TransactionsPreview({ transactions }: TransactionsPreviewProps) 
                 </div>
               </div>
               <p
-                className={`text-preset-4-bold shrink-0 ${
+                className={`text-preset-4-bold tabular-nums text-right leading-snug sm:shrink-0 ${
                   isPositive ? "text-secondary-green" : "text-grey-900"
                 }`}
               >

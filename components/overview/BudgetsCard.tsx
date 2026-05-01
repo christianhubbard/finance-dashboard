@@ -28,7 +28,7 @@ export function BudgetsCard({ budgets }: BudgetsCardProps) {
           <DonutChart budgets={budgets} size={220} strokeWidth={32} />
           <div className="pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center text-center">
             <p className="text-preset-5 text-grey-500">Spent</p>
-            <p className="text-preset-1 font-bold tracking-tight text-grey-900">
+            <p className="text-preset-1 font-bold tracking-tight text-grey-900 tabular-nums">
               {formatCurrency(spentTotal)}
             </p>
           </div>
@@ -44,7 +44,7 @@ export function BudgetsCard({ budgets }: BudgetsCardProps) {
               <span className="text-preset-4 flex-1 text-grey-500">
                 {b.category}
               </span>
-              <span className="text-preset-4-bold text-grey-900">
+              <span className="text-preset-4-bold tabular-nums text-grey-900">
                 {formatCurrency(b.spent)}
               </span>
             </li>
