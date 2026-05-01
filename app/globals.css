@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --background: var(--color-beige-100);
+  --foreground: var(--color-grey-900);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-public-sans);
+
+  /* Neutrals */
+  --color-beige-500: #98908b;
+  --color-beige-100: #f8f4f0;
+  --color-grey-900: #201f24;
+  --color-grey-500: #696868;
+  --color-grey-300: #b3b3b3;
+  --color-grey-100: #f2f2f2;
+  --color-white: #ffffff;
+
+  /* Secondary */
+  --color-secondary-green: #277c78;
+  --color-secondary-yellow: #f2cdac;
+  --color-secondary-cyan: #82c9d7;
+  --color-secondary-navy: #626070;
+  --color-secondary-red: #c94736;
+  --color-secondary-purple: #826cb0;
+
+  /* Extended */
+  --color-extended-turquoise: #597c7c;
+  --color-extended-brown: #93674f;
+  --color-extended-magenta: #934f6f;
+  --color-extended-blue: #3f82b2;
+  --color-extended-stone: #7f9161;
+  --color-extended-army: #9a9b97;
+  --color-extended-gold: #cab361;
+  --color-extended-orange: #be6c49;
+}
+
+body {
+  background: var(--color-beige-100);
+  color: var(--color-grey-900);
+  font-family: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+@utility text-preset-1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+@utility text-preset-2 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+@utility text-preset-3 {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+@utility text-preset-4 {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+@utility text-preset-4-bold {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+@utility text-preset-5 {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 400;
+}

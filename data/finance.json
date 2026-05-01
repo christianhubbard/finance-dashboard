@@ -1,0 +1,203 @@
+{
+  "balance": {
+    "current": 4836.33,
+    "income": 3814.25,
+    "expenses": 1700.5
+  },
+  "pots": [
+    {
+      "name": "Savings",
+      "target": 2000,
+      "total": 159,
+      "theme": "green"
+    },
+    {
+      "name": "Gift",
+      "target": 1000,
+      "total": 110,
+      "theme": "cyan"
+    },
+    {
+      "name": "Concert Ticket",
+      "target": 1500,
+      "total": 110,
+      "theme": "yellow"
+    },
+    {
+      "name": "New Laptop",
+      "target": 2500,
+      "total": 10,
+      "theme": "purple"
+    }
+  ],
+  "transactions": [
+    {
+      "avatar": "emma",
+      "name": "Emma Richardson",
+      "category": "General",
+      "date": "2022-11-28",
+      "amount": -100.25,
+      "recurring": true
+    },
+    {
+      "avatar": "urban",
+      "name": "Urban Services Hub",
+      "category": "Groceries",
+      "date": "2022-11-27",
+      "amount": -65.5,
+      "recurring": false
+    },
+    {
+      "avatar": "emma",
+      "name": "Emma Richardson",
+      "category": "Bills",
+      "date": "2022-11-26",
+      "amount": -75.5,
+      "recurring": true
+    },
+    {
+      "avatar": "savory",
+      "name": "Savory Eats",
+      "category": "Dining Out",
+      "date": "2022-11-26",
+      "amount": -17.5,
+      "recurring": false
+    },
+    {
+      "avatar": "floral",
+      "name": "Floral Boutique",
+      "category": "Personal Care",
+      "date": "2022-11-25",
+      "amount": -35,
+      "recurring": false
+    },
+    {
+      "avatar": "spark",
+      "name": "Spark Electric",
+      "category": "Bills",
+      "date": "2022-11-24",
+      "amount": -250,
+      "recurring": true
+    },
+    {
+      "avatar": "ledger",
+      "name": "Urban Ledger",
+      "category": "General",
+      "date": "2022-11-23",
+      "amount": 1200,
+      "recurring": false
+    },
+    {
+      "avatar": "trail",
+      "name": "Trail Hiking Gear",
+      "category": "Entertainment",
+      "date": "2022-11-22",
+      "amount": -45.99,
+      "recurring": false
+    },
+    {
+      "avatar": "north",
+      "name": "Northwind Traders",
+      "category": "Groceries",
+      "date": "2022-11-21",
+      "amount": -88.1,
+      "recurring": false
+    },
+    {
+      "avatar": "ember",
+      "name": "Ember Coffee Co.",
+      "category": "Dining Out",
+      "date": "2022-11-20",
+      "amount": -6.5,
+      "recurring": false
+    }
+  ],
+  "budgets": [
+    {
+      "category": "Entertainment",
+      "maximum": 50,
+      "spent": 50,
+      "theme": "green"
+    },
+    {
+      "category": "Bills",
+      "maximum": 750,
+      "spent": 375,
+      "theme": "yellow"
+    },
+    {
+      "category": "Dining Out",
+      "maximum": 300,
+      "spent": 120,
+      "theme": "cyan"
+    },
+    {
+      "category": "Personal Care",
+      "maximum": 100,
+      "spent": 45,
+      "theme": "navy"
+    },
+    {
+      "category": "Groceries",
+      "maximum": 400,
+      "spent": 125,
+      "theme": "red"
+    }
+  ],
+  "recurringBills": {
+    "paid": [
+      {
+        "avatar": "water",
+        "name": "City Water Works",
+        "category": "Water",
+        "date": "2022-11-01",
+        "amount": -30,
+        "recurring": true
+      },
+      {
+        "avatar": "spark",
+        "name": "Spark Electric",
+        "category": "Electric",
+        "date": "2022-11-05",
+        "amount": -100,
+        "recurring": true
+      },
+      {
+        "avatar": "emma",
+        "name": "Emma Richardson",
+        "category": "Rent",
+        "date": "2022-11-10",
+        "amount": -1150,
+        "recurring": true
+      }
+    ],
+    "upcoming": [
+      {
+        "avatar": "net",
+        "name": "NetStream Plus",
+        "category": "Streaming",
+        "date": "2022-12-01",
+        "amount": -9.99,
+        "recurring": true
+      }
+    ],
+    "dueSoon": [
+      {
+        "avatar": "emma",
+        "name": "Emma Richardson",
+        "category": "Rent",
+        "date": "2022-12-10",
+        "amount": -1150,
+        "recurring": true
+      },
+      {
+        "avatar": "urban",
+        "name": "Urban Services Hub",
+        "category": "Internet",
+        "date": "2022-12-08",
+        "amount": -45,
+        "recurring": true
+      }
+    ]
+  }
+}
