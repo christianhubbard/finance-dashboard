@@ -50,6 +50,12 @@ body {
   font-weight: 700;
 }
 
+@utility text-balance-amount {
+  font-size: min(2rem, 13cqw);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
 @utility text-preset-2 {
   font-size: 1.25rem;
   line-height: 1.2;

@@ -56,16 +56,33 @@ export function Sidebar() {
       }`}
     >
       <div
-        className={`flex items-center gap-3 px-8 pt-10 pb-8 ${collapsed ? "justify-center px-0" : ""}`}
+        className={`flex items-center gap-3 px-8 pt-10 pb-8 ${collapsed ? "flex-col justify-center px-0" : ""}`}
       >
-        <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white/10">
-          <Wallet className="size-4 text-secondary-green" strokeWidth={2} />
+        <div className="flex items-center gap-3">
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white/10">
+            <Wallet className="size-4 text-secondary-green" strokeWidth={2} />
+          </div>
+          {!collapsed ? (
+            <span className="text-preset-2 font-bold tracking-tight">
+              finance
+            </span>
+          ) : null}
         </div>
-        {!collapsed ? (
-          <span className="text-preset-2 font-bold tracking-tight">
-            finance
-          </span>
-        ) : null}
+        <button
+          type="button"
+          onClick={toggle}
+          className={`flex shrink-0 items-center justify-center rounded-lg p-2 text-grey-300 transition-colors hover:bg-white/5 hover:text-white ${
+            collapsed ? "mt-2" : "ml-auto"
+          }`}
+          aria-expanded={!collapsed}
+          aria-label={collapsed ? "Expand menu" : "Minimize menu"}
+        >
+          <Minimize2
+            className={`size-5 shrink-0 transition-transform ${collapsed ? "rotate-180" : ""}`}
+            strokeWidth={2}
+            aria-hidden
+          />
+        </button>
       </div>
 
       <nav className="flex flex-1 flex-col gap-1 px-4" aria-label="Primary">
@@ -92,24 +109,6 @@ export function Sidebar() {
         })}
       </nav>
 
-      <div className={`mt-auto px-4 pb-10 ${collapsed ? "" : ""}`}>
-        <button
-          type="button"
-          onClick={toggle}
-          className={`flex w-full items-center gap-4 rounded-xl px-4 py-3 text-preset-4 font-medium text-grey-300 transition-colors hover:bg-white/5 hover:text-white ${
-            collapsed ? "justify-center px-2" : ""
-          }`}
-          aria-expanded={!collapsed}
-          aria-label={collapsed ? "Expand menu" : "Minimize menu"}
-        >
-          <Minimize2
-            className={`size-5 shrink-0 transition-transform ${collapsed ? "rotate-180" : ""}`}
-            strokeWidth={2}
-            aria-hidden
-          />
-          {!collapsed ? <span>Minimize Menu</span> : null}
-        </button>
-      </div>
     </aside>
   );
 }
