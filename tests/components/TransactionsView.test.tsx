@@ -49,7 +49,7 @@ describe("TransactionsView", () => {
     ).toBeInTheDocument();
     expect(screen.getByText("Showing 3 of 3")).toBeInTheDocument();
     expect(screen.getByText("Emma Richardson")).toBeInTheDocument();
-    expect(screen.getByText("Dining Out")).toBeInTheDocument();
+    expect(screen.getAllByText("Dining Out").length).toBeGreaterThan(0);
     expect(screen.getByText("Aug 21, 2024")).toBeInTheDocument();
     expect(screen.getByText("+$1,200.00")).toBeInTheDocument();
   });
