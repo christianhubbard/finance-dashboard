@@ -1,6 +1,7 @@
 import { getThemeColor } from "@/lib/theme";
 import type { Transaction } from "@/lib/types";
 import { formatCurrency } from "@/lib/format";
+import { formatTransactionDate } from "@/lib/transactions";
 
 const AVATAR_ACCENTS: Record<string, string> = {
   emma: "var(--color-secondary-cyan)",
@@ -30,15 +31,6 @@ function TransactionAvatar({ tx }: { tx: Transaction }) {
   );
 }
 
-function formatDisplayDate(iso: string): string {
-  const d = new Date(iso + "T12:00:00");
-  return new Intl.DateTimeFormat("en-US", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  }).format(d);
-}
-
 type TransactionsPreviewProps = {
   transactions: Transaction[];
 };
@@ -57,17 +49,17 @@ export function TransactionsPreview({ transactions }: TransactionsPreviewProps) 
             >
               <TransactionAvatar tx={tx} />
               <div className="min-w-0 flex-1">
-                <p className="text-preset-4-bold text-grey-900 truncate">
+                <p className="truncate text-preset-4-bold text-grey-900">
                   {tx.name}
                 </p>
                 <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-0 text-preset-5 text-grey-500">
                   <span>{tx.category}</span>
                   <span aria-hidden>•</span>
-                  <span>{formatDisplayDate(tx.date)}</span>
+                  <span>{formatTransactionDate(tx.date)}</span>
                 </div>
               </div>
               <p
-                className={`text-preset-4-bold shrink-0 ${
+                className={`shrink-0 text-preset-4-bold ${
                   isPositive ? "text-secondary-green" : "text-grey-900"
                 }`}
               >
