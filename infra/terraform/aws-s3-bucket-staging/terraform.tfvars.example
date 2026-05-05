@@ -1,0 +1,12 @@
+environment = "staging"
+team        = "finance-app"
+cost_center = "finance-dashboard"
+aws_region  = "us-east-1"
+project_name = "finance-dashboard"
+
+bucket_name = "finance-dashboard-staging-assets"
+
+extra_tags = {
+  jira-ticket = "FIN-1"
+  feature     = "transactions-page"
+}
