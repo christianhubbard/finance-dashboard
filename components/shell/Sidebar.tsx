@@ -53,12 +53,12 @@ export function Sidebar() {
 
   return (
     <aside
-      className={`flex h-full shrink-0 flex-col bg-grey-900 text-white transition-[width] duration-200 ease-out ${
+      className={`sticky top-0 flex h-dvh max-h-dvh min-h-0 shrink-0 flex-col overflow-hidden bg-grey-900 text-white transition-[width] duration-200 ease-out ${
         collapsed ? "w-[90px]" : "w-[300px]"
       }`}
     >
       <div
-        className={`flex items-center gap-3 px-8 pt-10 pb-8 ${collapsed ? "flex-col justify-center px-0" : ""}`}
+        className={`flex shrink-0 items-center gap-3 px-8 pt-10 pb-8 ${collapsed ? "flex-col justify-center px-0" : ""}`}
       >
         <div className="flex items-center gap-3">
           <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white/10">
@@ -87,7 +87,10 @@ export function Sidebar() {
         </button>
       </div>
 
-      <nav className="flex flex-1 flex-col gap-1 px-4" aria-label="Primary">
+      <nav
+        className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-4"
+        aria-label="Primary"
+      >
         {nav.map(({ href, label, icon: Icon }) => {
           const active =
             href === "/"
@@ -109,6 +112,25 @@ export function Sidebar() {
             </Link>
           );
         })}
+      </nav>
+
+      <div
+        className="flex shrink-0 flex-col gap-1 px-4 pb-16 pt-2"
+        aria-label="Sentry demos"
+      >
+        <button
+          type="button"
+          onClick={() => {
+            throw new Error("Finance Dashboard Sentry demo error");
+          }}
+          className={`flex items-center gap-4 rounded-xl border border-secondary-red/60 bg-secondary-red/15 px-4 py-3 text-preset-4-bold text-white transition-colors hover:bg-secondary-red/25 ${
+            collapsed ? "justify-center px-2" : ""
+          }`}
+          title={collapsed ? "Trigger Sentry Error" : undefined}
+        >
+          <Bug className="size-5 shrink-0" strokeWidth={2} aria-hidden />
+          {!collapsed ? <span>Trigger Sentry Error</span> : null}
+        </button>
         <button
           type="button"
           onClick={() => {
@@ -145,7 +167,7 @@ export function Sidebar() {
           </span>
           {!collapsed ? <span>Create Unique Sentry Issue</span> : null}
         </button>
-      </nav>
+      </div>
     </aside>
   );
 }
