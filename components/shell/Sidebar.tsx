@@ -1,12 +1,10 @@
 "use client";
 
-import * as Sentry from "@sentry/nextjs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   ArrowLeftRight,
-  Bug,
   LayoutGrid,
   Minimize2,
   PieChart,
@@ -109,42 +107,6 @@ export function Sidebar() {
             </Link>
           );
         })}
-        <button
-          type="button"
-          onClick={() => {
-            const issueId = crypto.randomUUID();
-
-            Sentry.captureException(
-              new Error(`Finance Dashboard unique demo error ${issueId}`),
-              {
-                fingerprint: ["finance-dashboard-unique-demo", issueId],
-                tags: {
-                  demo: "unique-issue",
-                },
-              },
-            );
-          }}
-          className={`flex items-center gap-4 rounded-xl border border-secondary-yellow/60 bg-secondary-yellow/15 px-4 py-3 text-preset-4-bold text-white transition-colors hover:bg-secondary-yellow/25 ${
-            collapsed ? "justify-center px-2" : ""
-          }`}
-          title={collapsed ? "Create unique Sentry issue" : undefined}
-        >
-          <span
-            className="relative block size-6 shrink-0"
-            aria-hidden
-          >
-            <Bug className="absolute left-1 top-0 size-4" strokeWidth={2.25} />
-            <Bug
-              className="absolute bottom-0 left-0 size-4 opacity-90"
-              strokeWidth={2.25}
-            />
-            <Bug
-              className="absolute bottom-0 right-0 size-4 opacity-90"
-              strokeWidth={2.25}
-            />
-          </span>
-          {!collapsed ? <span>Create Unique Sentry Issue</span> : null}
-        </button>
       </nav>
     </aside>
   );
