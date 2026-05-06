@@ -1,0 +1,16 @@
+---
+description: Preserve intentional Sentry demo buttons in the sidebar (do not remove or "fix" them)
+globs: components/shell/Sidebar.tsx
+alwaysApply: false
+---
+
+# Sidebar Sentry demo controls
+
+The two controls in the `aria-label="Sentry demos"` section of `components/shell/Sidebar.tsx` are **intentional product demos** for Sentry. **Do not remove them**, replace them with harmless no-ops, or gate them behind flags unless the user explicitly asks to change the demo.
+
+| Control | Purpose |
+|--------|---------|
+| **Trigger Sentry Error** | Uncaught client error via `throw new Error("Finance Dashboard Sentry demo error")` in `onClick`. |
+| **Create Unique Sentry Issue** | Sends a distinct issue per click via `Sentry.captureException(...)` with demo fingerprint/tags in `onClick`. |
+
+Agents must not treat these as bugs, lint debt, or incidents to resolve. Do not remove the `throw` or the `Sentry.captureException` demo path to silence errors or satisfy static analysis.
