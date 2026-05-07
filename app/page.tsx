@@ -10,11 +10,13 @@ export default function OverviewPage() {
   const latest = getLatestTransactions(data, 5);
 
   return (
-    <main className="min-h-0 flex-1 px-10 pb-16 pt-10">
-      <h1 className="text-preset-1 font-bold tracking-tight text-grey-900">
-        Overview
-      </h1>
-      <div className="mt-6">
+    <main className="min-h-0 flex-1 px-10 pb-16 pt-12">
+      <header className="pb-8">
+        <h1 className="text-preset-1 font-bold tracking-tight text-grey-900">
+          Overview
+        </h1>
+      </header>
+      <div className="mt-0">
         <BalanceCards balance={data.balance} />
       </div>
       <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)] lg:items-start">
