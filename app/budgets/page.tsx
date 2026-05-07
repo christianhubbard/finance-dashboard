@@ -1,5 +1,13 @@
-import { PlaceholderPage } from "@/components/shell/PlaceholderPage";
+import { BudgetsPageContent } from "@/components/budgets/BudgetsPageContent";
+import { getFinanceData } from "@/lib/data";
 
 export default function BudgetsPage() {
-  return <PlaceholderPage title="Budgets" />;
+  const data = getFinanceData();
+
+  return (
+    <BudgetsPageContent
+      budgets={data.budgets}
+      transactions={data.transactions}
+    />
+  );
 }
