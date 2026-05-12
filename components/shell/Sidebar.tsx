@@ -51,7 +51,7 @@ export function Sidebar() {
 
   return (
     <aside
-      className={`flex h-full shrink-0 flex-col bg-grey-900 text-white transition-[width] duration-200 ease-out ${
+      className={`flex h-full shrink-0 flex-col bg-prototype-sidebar-pink text-grey-900 transition-[width] duration-200 ease-out ${
         collapsed ? "w-[90px]" : "w-[300px]"
       }`}
     >
@@ -59,8 +59,8 @@ export function Sidebar() {
         className={`flex items-center gap-3 px-8 pt-10 pb-8 ${collapsed ? "flex-col justify-center px-0" : ""}`}
       >
         <div className="flex items-center gap-3">
-          <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white/10">
-            <Wallet className="size-4 text-secondary-green" strokeWidth={2} />
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white/40">
+            <Wallet className="size-4 text-grey-900" strokeWidth={2} />
           </div>
           {!collapsed ? (
             <span className="text-preset-2 font-bold tracking-tight">
@@ -71,7 +71,7 @@ export function Sidebar() {
         <button
           type="button"
           onClick={toggle}
-          className={`flex shrink-0 items-center justify-center rounded-lg p-2 text-grey-300 transition-colors hover:bg-white/5 hover:text-white ${
+          className={`flex shrink-0 items-center justify-center rounded-lg p-2 text-grey-900/75 transition-colors hover:bg-white/35 hover:text-grey-900 ${
             collapsed ? "mt-2" : "ml-auto"
           }`}
           aria-expanded={!collapsed}
@@ -97,8 +97,8 @@ export function Sidebar() {
               href={href}
               className={`flex items-center gap-4 rounded-xl px-4 py-3 text-preset-4 font-medium transition-colors ${
                 active
-                  ? "border border-white/10 bg-grey-500/30 text-white"
-                  : "text-grey-300 hover:bg-white/5 hover:text-white"
+                  ? "border border-white/60 bg-white/60 text-grey-900"
+                  : "text-grey-900/80 hover:bg-white/35 hover:text-grey-900"
               } ${collapsed ? "justify-center px-2" : ""}`}
               title={collapsed ? label : undefined}
             >

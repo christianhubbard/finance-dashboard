@@ -36,6 +36,9 @@
   --color-extended-army: #9a9b97;
   --color-extended-gold: #cab361;
   --color-extended-orange: #be6c49;
+
+  /* Prototype */
+  --color-prototype-sidebar-pink: #ff3eb5;
 }
 
 body {
