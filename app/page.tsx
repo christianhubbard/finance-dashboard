@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import { BalanceCards } from "@/components/overview/BalanceCards";
 import { BudgetsCard } from "@/components/overview/BudgetsCard";
+import { InsecureAnnouncement } from "@/components/overview/InsecureAnnouncement";
 import { PotsSummary } from "@/components/overview/PotsSummary";
 import { RecurringBillsCard } from "@/components/overview/RecurringBillsCard";
 import { TransactionsPreview } from "@/components/overview/TransactionsPreview";
@@ -8,12 +10,19 @@ import { getFinanceData, getLatestTransactions } from "@/lib/data";
 export default function OverviewPage() {
   const data = getFinanceData();
   const latest = getLatestTransactions(data, 5);
+  const profileName = data.transactions[0]?.name ?? "Primary account";
 
   return (
     <main className="min-h-0 flex-1 px-10 pb-16 pt-10">
       <h1 className="text-preset-1 font-bold tracking-tight text-grey-900">
         Overview
       </h1>
+      <Suspense fallback={null}>
+        <InsecureAnnouncement
+          balanceSnapshot={data.balance.current}
+          profileName={profileName}
+        />
+      </Suspense>
       <div className="mt-6">
         <BalanceCards balance={data.balance} />
       </div>
