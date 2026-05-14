@@ -48,7 +48,7 @@ describe("PotsDashboard", () => {
     });
     fireEvent.click(screen.getByRole("button", { name: "Add Money" }));
 
-    expect(screen.getByText("$150.00")).toBeInTheDocument();
+    expect(screen.getAllByText("$150.00")).toHaveLength(2);
     expect(
       screen.getByText("$150.00 saved toward $500.00 across 1 pot."),
     ).toBeInTheDocument();
