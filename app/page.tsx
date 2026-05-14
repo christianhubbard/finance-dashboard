@@ -3,6 +3,7 @@ import { BudgetsCard } from "@/components/overview/BudgetsCard";
 import { PotsSummary } from "@/components/overview/PotsSummary";
 import { RecurringBillsCard } from "@/components/overview/RecurringBillsCard";
 import { TransactionsPreview } from "@/components/overview/TransactionsPreview";
+import { DashboardHeader } from "@/components/shell/DashboardHeader";
 import { getFinanceData, getLatestTransactions } from "@/lib/data";
 
 export default function OverviewPage() {
@@ -11,9 +12,7 @@ export default function OverviewPage() {
 
   return (
     <main className="min-h-0 flex-1 px-10 pb-16 pt-10">
-      <h1 className="text-preset-1 font-bold tracking-tight text-grey-900">
-        Overview
-      </h1>
+      <DashboardHeader title="Overview" />
       <div className="mt-6">
         <BalanceCards balance={data.balance} />
       </div>
