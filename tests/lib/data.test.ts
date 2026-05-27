@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { getLatestTransactions, sumAmounts } from "@/lib/data";
+import {
+  getBudgetDetails,
+  getLatestTransactions,
+  getRecentTransactionsForCategory,
+  sumAmounts,
+} from "@/lib/data";
 import type { FinanceData, Transaction } from "@/lib/types";
 
 const tx = (date: string, amount = 0, name = date): Transaction => ({
@@ -53,5 +58,47 @@ describe("getLatestTransactions", () => {
     const original = [...data.transactions];
     getLatestTransactions(data, 2);
     expect(data.transactions).toEqual(original);
+  });
+});
+
+describe("getRecentTransactionsForCategory", () => {
+  const data = {
+    transactions: [
+      tx("2024-01-01", -10, "old-groceries"),
+      tx("2024-03-15", -20, "latest-groceries"),
+      { ...tx("2024-04-01", -30, "latest-bills"), category: "Bills" },
+      tx("2024-02-10", -40, "middle-groceries"),
+    ],
+  } as unknown as FinanceData;
+
+  data.transactions[0].category = "Groceries";
+  data.transactions[1].category = "Groceries";
+  data.transactions[3].category = "Groceries";
+
+  it("filters transactions by category and sorts recent first", () => {
+    const result = getRecentTransactionsForCategory(data, "Groceries", 2).map(
+      (t) => t.name,
+    );
+    expect(result).toEqual(["latest-groceries", "middle-groceries"]);
+  });
+});
+
+describe("getBudgetDetails", () => {
+  it("derives remaining values and attaches recent category transactions", () => {
+    const data = {
+      budgets: [
+        { category: "Groceries", maximum: 400, spent: 125, theme: "red" },
+      ],
+      transactions: [
+        { ...tx("2024-01-01", -10, "old"), category: "Groceries" },
+        { ...tx("2024-02-01", -20, "new"), category: "Groceries" },
+        { ...tx("2024-03-01", -30, "other"), category: "Bills" },
+      ],
+    } as unknown as FinanceData;
+
+    const [budget] = getBudgetDetails(data, 1);
+
+    expect(budget.remaining).toBe(275);
+    expect(budget.transactions.map((t) => t.name)).toEqual(["new"]);
   });
 });
