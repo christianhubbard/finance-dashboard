@@ -1,5 +1,9 @@
-import { PlaceholderPage } from "@/components/shell/PlaceholderPage";
+import { BudgetsView } from "@/components/budgets/BudgetsView";
+import { getBudgetDetails, getFinanceData } from "@/lib/data";
 
 export default function BudgetsPage() {
-  return <PlaceholderPage title="Budgets" />;
+  const data = getFinanceData();
+  const budgets = getBudgetDetails(data);
+
+  return <BudgetsView budgets={budgets} />;
 }
