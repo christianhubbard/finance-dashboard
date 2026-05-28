@@ -1,6 +1,6 @@
 ---
 name: jira-fin-board
-description: "FIN/finance-dashboard Jira defaults — ALWAYS load this skill when working in this repo and the user mentions Jira at all (board, backlog, sprint, epic, story, ticket, issue key, FIN board, FIN project, create/query/triage/comment on issues). Unless they name another project explicitly, every Jira board/project reference means project key FIN only — never infer a different board or ask which project. Applies to Atlassian MCP and skills (triage-issue, spec-to-backlog, capture-tasks-from-meeting-notes, generate-status-report, search-company-knowledge): force FIN and project = FIN in JQL."
+description: "FIN/finance-dashboard Jira defaults — ALWAYS load this skill when working in this repo and the user mentions Jira at all (board, backlog, sprint, epic, story, ticket, issue key, FIN board, FIN project, create/query/triage/comment on issues). Unless they name another project explicitly, every Jira board/project reference means project key FIN only — never infer a different board or ask which project. Applies to Atlassian MCP and skills (triage-issue, spec-to-backlog, capture-tasks-from-meeting-notes, generate-status-report, search-company-knowledge, sentry-to-jira-fin): force FIN and project = FIN in JQL."
 ---
 
 # Jira conventions for finance-dashboard
