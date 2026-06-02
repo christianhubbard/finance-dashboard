@@ -15,10 +15,10 @@ export function BudgetsCard({ budgets }: BudgetsCardProps) {
   return (
     <Card>
       <div className="flex items-start justify-between gap-4">
-        <h2 className="text-preset-2 text-grey-900">Budgets</h2>
+        <h2 className="text-preset-2 text-grey-900 dark:text-grey-100">Budgets</h2>
         <Link
           href="/budgets"
-          className="text-preset-4 font-medium text-grey-500 underline-offset-4 hover:text-grey-900 hover:underline"
+          className="text-preset-4 font-medium text-grey-500 underline-offset-4 hover:text-grey-900 hover:underline dark:text-grey-300 dark:hover:text-grey-100"
         >
           See Details
         </Link>
@@ -27,8 +27,8 @@ export function BudgetsCard({ budgets }: BudgetsCardProps) {
         <div className="relative flex items-center justify-center">
           <DonutChart budgets={budgets} size={220} strokeWidth={32} />
           <div className="pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center text-center">
-            <p className="text-preset-5 text-grey-500">Spent</p>
-            <p className="text-preset-1 font-bold tracking-tight text-grey-900">
+            <p className="text-preset-5 text-grey-500 dark:text-grey-300">Spent</p>
+            <p className="text-preset-1 font-bold tracking-tight text-grey-900 dark:text-grey-100">
               {formatCurrency(spentTotal)}
             </p>
           </div>
@@ -41,10 +41,10 @@ export function BudgetsCard({ budgets }: BudgetsCardProps) {
                 style={{ backgroundColor: getThemeColor(b.theme) }}
                 aria-hidden
               />
-              <span className="text-preset-4 flex-1 text-grey-500">
+              <span className="text-preset-4 flex-1 text-grey-500 dark:text-grey-300">
                 {b.category}
               </span>
-              <span className="text-preset-4-bold text-grey-900">
+              <span className="text-preset-4-bold text-grey-900 dark:text-grey-100">
                 {formatCurrency(b.spent)}
               </span>
             </li>

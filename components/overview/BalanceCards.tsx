@@ -14,14 +14,14 @@ export function BalanceCards({ balance }: BalanceCardsProps) {
           {formatCurrency(balance.current)}
         </p>
       </div>
-      <div className="@container min-w-0 overflow-hidden rounded-2xl bg-white px-6 py-6">
-        <p className="text-preset-4 text-grey-500">Income</p>
+      <div className="@container min-w-0 overflow-hidden rounded-2xl bg-white px-6 py-6 dark:bg-[#1b1913]">
+        <p className="text-preset-4 text-grey-500 dark:text-grey-300">Income</p>
         <p className="mt-4 text-balance-amount font-bold tracking-tight tabular-nums text-secondary-green">
           +{formatCurrency(balance.income)}
         </p>
       </div>
-      <div className="@container min-w-0 overflow-hidden rounded-2xl bg-white px-6 py-6">
-        <p className="text-preset-4 text-grey-500">Expenses</p>
+      <div className="@container min-w-0 overflow-hidden rounded-2xl bg-white px-6 py-6 dark:bg-[#1b1913]">
+        <p className="text-preset-4 text-grey-500 dark:text-grey-300">Expenses</p>
         <p className="mt-4 text-balance-amount font-bold tracking-tight tabular-nums text-secondary-red">
           -{formatCurrency(balance.expenses)}
         </p>
