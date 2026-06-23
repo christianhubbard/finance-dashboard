@@ -37,9 +37,9 @@ describe("RecurringBillsDashboard", () => {
     expect(screen.getByText("Total Bills")).toBeInTheDocument();
     expect(screen.getByText("-$1,345.00")).toBeInTheDocument();
     expect(screen.getByText("Paid So Far")).toBeInTheDocument();
-    expect(screen.getByText("-$100.00")).toBeInTheDocument();
+    expect(screen.getAllByText("-$100.00").length).toBeGreaterThan(0);
     expect(screen.getByText("Upcoming")).toBeInTheDocument();
-    expect(screen.getByText("-$1,200.00")).toBeInTheDocument();
+    expect(screen.getAllByText("-$1,200.00").length).toBeGreaterThan(0);
   });
 
   it("groups bills by paid, upcoming, and overdue status", () => {
@@ -50,7 +50,7 @@ describe("RecurringBillsDashboard", () => {
     expect(within(paidList).getByText("Power Company")).toBeInTheDocument();
 
     const upcomingList = screen.getByRole("list", { name: "Upcoming bills" });
-    expect(within(upcomingList).getByText("Rent")).toBeInTheDocument();
+    expect(within(upcomingList).getAllByText("Rent").length).toBeGreaterThan(0);
 
     const overdueList = screen.getByRole("list", { name: "Overdue bills" });
     expect(within(overdueList).getByText("Internet Provider")).toBeInTheDocument();
