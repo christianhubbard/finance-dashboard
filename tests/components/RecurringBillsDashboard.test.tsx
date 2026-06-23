@@ -38,7 +38,7 @@ describe("RecurringBillsDashboard", () => {
     expect(screen.getByText("-$1,345.00")).toBeInTheDocument();
     expect(screen.getByText("Paid So Far")).toBeInTheDocument();
     expect(screen.getAllByText("-$100.00").length).toBeGreaterThan(0);
-    expect(screen.getByText("Upcoming")).toBeInTheDocument();
+    expect(screen.getAllByText("Upcoming").length).toBeGreaterThan(0);
     expect(screen.getAllByText("-$1,200.00").length).toBeGreaterThan(0);
   });
 
