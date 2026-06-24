@@ -1,37 +1,20 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
-import {
-  applyColorMode,
-  resolveColorMode,
-  type ColorMode,
-} from "@/lib/color-mode";
+import { useColorMode } from "./ColorModeProvider";
 
 type ThemeToggleProps = {
   collapsed: boolean;
 };
 
 export function ThemeToggle({ collapsed }: ThemeToggleProps) {
-  const [mode, setMode] = useState<ColorMode>("light");
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- sync with client-only preference after SSR
-    setMode(resolveColorMode());
-  }, []);
-
-  const toggle = () => {
-    const next: ColorMode = mode === "light" ? "dark" : "light";
-    applyColorMode(next);
-    setMode(next);
-  };
-
+  const { mode, toggleMode } = useColorMode();
   const isDark = mode === "dark";
 
   return (
     <button
       type="button"
-      onClick={toggle}
+      onClick={toggleMode}
       className={`flex w-full items-center gap-4 rounded-xl px-4 py-3 text-preset-4 font-medium text-grey-300 transition-colors hover:bg-white/5 hover:text-white ${
         collapsed ? "justify-center px-2" : ""
       }`}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Public_Sans } from "next/font/google";
 import "./globals.css";
 import { AppShell } from "@/components/shell/AppShell";
+import { ColorModeProvider } from "@/components/shell/ColorModeProvider";
 import { ColorModeScript } from "@/components/shell/ColorModeScript";
 
 const publicSans = Public_Sans({
@@ -21,16 +22,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${publicSans.variable} h-full antialiased`}
-      suppressHydrationWarning
-    >
+    <html lang="en" suppressHydrationWarning>
       <head>
         <ColorModeScript />
       </head>
-      <body className="min-h-full flex font-sans text-foreground">
-        <AppShell>{children}</AppShell>
+      <body
+        className={`${publicSans.variable} min-h-full flex font-sans text-foreground antialiased`}
+      >
+        <ColorModeProvider>
+          <AppShell>{children}</AppShell>
+        </ColorModeProvider>
       </body>
     </html>
   );
