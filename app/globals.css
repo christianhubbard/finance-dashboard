@@ -1,13 +1,42 @@
 @import "tailwindcss";
 
 :root {
-  --background: var(--color-beige-100);
-  --foreground: var(--color-grey-900);
+  --surface: #f8f4f0;
+  --card: #ffffff;
+  --foreground: #201f24;
+  --muted: #696868;
+  --subtle: #ebe5df;
+  --accent-surface: #201f24;
+  --accent-foreground: #f2f2f2;
+  --sidebar: #201f24;
+  --chart-track: #f8f4f0;
+  --background: var(--surface);
+}
+
+.dark {
+  --surface: #141210;
+  --card: #1f1d1b;
+  --foreground: #f2f2f0;
+  --muted: #98908b;
+  --subtle: #2c2a28;
+  --accent-surface: #0a0908;
+  --accent-foreground: #f2f2f0;
+  --sidebar: #0c0b0a;
+  --chart-track: #2c2a28;
+  --background: var(--surface);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-accent-surface: var(--accent-surface);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-track: var(--chart-track);
   --font-sans: var(--font-public-sans);
 
   /* Neutrals */
@@ -39,8 +68,8 @@
 }
 
 body {
-  background: var(--color-beige-100);
-  color: var(--color-grey-900);
+  background: var(--surface);
+  color: var(--foreground);
   font-family: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
 }
 

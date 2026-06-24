@@ -16,7 +16,7 @@ describe("Card", () => {
     const { container } = render(<Card>x</Card>);
     const div = container.firstChild as HTMLElement;
     expect(div.className).toContain("rounded-2xl");
-    expect(div.className).toContain("bg-white");
+    expect(div.className).toContain("bg-card");
   });
 
   it("appends a custom className", () => {

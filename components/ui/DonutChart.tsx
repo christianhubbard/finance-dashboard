@@ -55,7 +55,7 @@ export function DonutChart({
         cy={cy}
         r={radius}
         fill="none"
-        stroke="var(--color-beige-100)"
+        stroke="var(--color-chart-track)"
         strokeWidth={strokeWidth}
       />
       {segments.map((s, i) =>
