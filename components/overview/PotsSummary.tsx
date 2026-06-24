@@ -15,7 +15,9 @@ export function PotsSummary({ pots }: PotsSummaryProps) {
     <Card>
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h2 className="text-preset-2 text-grey-900">Pots</h2>
+          <h2 className="text-3xl font-bold leading-tight text-grey-900">
+            Pots
+          </h2>
           <p className="mt-4 text-preset-4 text-grey-500">Total saved</p>
           <p className="mt-2 text-preset-1 font-bold tracking-tight text-grey-900">
             {formatCurrency(totalSaved)}

@@ -15,7 +15,9 @@ export function BudgetsCard({ budgets }: BudgetsCardProps) {
   return (
     <Card>
       <div className="flex items-start justify-between gap-4">
-        <h2 className="text-preset-2 text-grey-900">Budgets</h2>
+        <h2 className="text-preset-2 text-grey-900 underline underline-offset-4">
+          Budgets
+        </h2>
         <Link
           href="/budgets"
           className="text-preset-4 font-medium text-grey-500 underline-offset-4 hover:text-grey-900 hover:underline"
