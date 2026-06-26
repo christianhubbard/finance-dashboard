@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { getLatestTransactions, sumAmounts } from "@/lib/data";
-import type { FinanceData, Transaction } from "@/lib/types";
+import {
+  getLatestTransactions,
+  getRecurringBillsSummary,
+  getRecurringBillsWithStatus,
+  sumAmounts,
+} from "@/lib/data";
+import type { FinanceData, RecurringBill, Transaction } from "@/lib/types";
 
 const tx = (date: string, amount = 0, name = date): Transaction => ({
   avatar: "x",
@@ -53,5 +58,55 @@ describe("getLatestTransactions", () => {
     const original = [...data.transactions];
     getLatestTransactions(data, 2);
     expect(data.transactions).toEqual(original);
+  });
+});
+
+const recurringBill = (name: string, date: string, amount: number): RecurringBill => ({
+  avatar: "x",
+  name,
+  category: "Bills",
+  date,
+  amount,
+  recurring: true,
+});
+
+describe("getRecurringBillsWithStatus", () => {
+  const data = {
+    recurringBills: {
+      paid: [recurringBill("Paid A", "2022-11-10", -10)],
+      upcoming: [recurringBill("Upcoming A", "2022-12-01", -20)],
+      dueSoon: [recurringBill("Due Soon A", "2022-12-08", -30)],
+    },
+  } as unknown as FinanceData;
+
+  it("tags each bill with its status bucket", () => {
+    const result = getRecurringBillsWithStatus(data);
+    expect(result.map((bill) => bill.status)).toEqual([
+      "paid",
+      "upcoming",
+      "dueSoon",
+    ]);
+  });
+});
+
+describe("getRecurringBillsSummary", () => {
+  const data = {
+    recurringBills: {
+      paid: [recurringBill("Paid A", "2022-11-10", -10), recurringBill("Paid B", "2022-11-01", -5)],
+      upcoming: [recurringBill("Upcoming A", "2022-12-01", -20)],
+      dueSoon: [recurringBill("Due Soon A", "2022-12-08", -30)],
+    },
+  } as unknown as FinanceData;
+
+  it("computes counts and absolute totals", () => {
+    expect(getRecurringBillsSummary(data)).toEqual({
+      totalCount: 4,
+      paidCount: 2,
+      upcomingCount: 1,
+      dueSoonCount: 1,
+      paidTotal: 15,
+      upcomingTotal: 20,
+      dueSoonTotal: 30,
+    });
   });
 });

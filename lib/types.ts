@@ -29,6 +29,22 @@ export type Budget = {
 
 export type RecurringBill = Transaction & { recurring: true };
 
+export type RecurringBillStatus = "paid" | "upcoming" | "dueSoon";
+
+export type RecurringBillWithStatus = RecurringBill & {
+  status: RecurringBillStatus;
+};
+
+export type RecurringBillsSummary = {
+  totalCount: number;
+  paidCount: number;
+  upcomingCount: number;
+  dueSoonCount: number;
+  paidTotal: number;
+  upcomingTotal: number;
+  dueSoonTotal: number;
+};
+
 export type FinanceData = {
   balance: Balance;
   pots: Pot[];

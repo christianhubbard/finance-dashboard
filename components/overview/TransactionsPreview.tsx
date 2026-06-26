@@ -1,6 +1,6 @@
 import { getThemeColor } from "@/lib/theme";
 import type { Transaction } from "@/lib/types";
-import { formatCurrency } from "@/lib/format";
+import { formatCurrency, formatDisplayDate } from "@/lib/format";
 
 const AVATAR_ACCENTS: Record<string, string> = {
   emma: "var(--color-secondary-cyan)",
@@ -28,15 +28,6 @@ function TransactionAvatar({ tx }: { tx: Transaction }) {
       {initial}
     </div>
   );
-}
-
-function formatDisplayDate(iso: string): string {
-  const d = new Date(iso + "T12:00:00");
-  return new Intl.DateTimeFormat("en-US", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  }).format(d);
 }
 
 type TransactionsPreviewProps = {
