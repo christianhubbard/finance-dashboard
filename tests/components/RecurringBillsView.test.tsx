@@ -41,6 +41,7 @@ describe("RecurringBillsView", () => {
     expect(screen.getByText("Paid So Far")).toBeInTheDocument();
     expect(screen.getAllByText("-$130.00")).toHaveLength(2);
     expect(screen.getAllByText("Upcoming")).toHaveLength(3);
+    expect(screen.getByText("1 bill upcoming")).toBeInTheDocument();
     expect(screen.getAllByText("-$9.99")).toHaveLength(3);
   });
 

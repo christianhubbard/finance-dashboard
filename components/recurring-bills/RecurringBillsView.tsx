@@ -46,6 +46,10 @@ function billAmount(amount: number): string {
   return `-${formatCurrency(Math.abs(amount))}`;
 }
 
+function billCountLabel(count: number): string {
+  return `${count} ${count === 1 ? "bill" : "bills"}`;
+}
+
 function BillRow({
   bill,
   status,
@@ -86,28 +90,28 @@ export function RecurringBillsView({ data }: RecurringBillsViewProps) {
     {
       label: "Total Bills",
       value: billAmount(summary.totalBills),
-      detail: `${summary.billCount} bills this month`,
+      detail: `${billCountLabel(summary.billCount)} this month`,
       className: "bg-grey-900 text-white",
       detailClassName: "text-grey-100",
     },
     {
       label: "Paid So Far",
       value: billAmount(summary.paid),
-      detail: `${groups.paid.length} paid bills`,
+      detail: `${billCountLabel(groups.paid.length)} paid`,
       className: "bg-white text-grey-900",
       detailClassName: "text-grey-500",
     },
     {
       label: "Upcoming",
       value: billAmount(summary.upcoming),
-      detail: `${groups.upcoming.length} upcoming bills`,
+      detail: `${billCountLabel(groups.upcoming.length)} upcoming`,
       className: "bg-white text-grey-900",
       detailClassName: "text-grey-500",
     },
     {
       label: "Overdue",
       value: billAmount(summary.overdue),
-      detail: `${groups.overdue.length} overdue bills`,
+      detail: `${billCountLabel(groups.overdue.length)} overdue`,
       className: "bg-white text-grey-900",
       detailClassName: "text-grey-500",
     },
@@ -178,7 +182,7 @@ export function RecurringBillsView({ data }: RecurringBillsViewProps) {
                     {billAmount(total)}
                   </p>
                   <p className="mt-1 text-preset-5 text-grey-500">
-                    {bills.length} bills
+                    {billCountLabel(bills.length)}
                   </p>
                 </div>
               </div>
