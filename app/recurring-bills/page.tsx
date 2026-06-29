@@ -1,5 +1,8 @@
-import { PlaceholderPage } from "@/components/shell/PlaceholderPage";
+import { RecurringBillsView } from "@/components/recurring-bills/RecurringBillsView";
+import { getFinanceData } from "@/lib/data";
 
 export default function RecurringBillsPage() {
-  return <PlaceholderPage title="Recurring Bills" />;
+  const data = getFinanceData();
+
+  return <RecurringBillsView data={data} />;
 }
