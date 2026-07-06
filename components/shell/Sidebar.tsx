@@ -3,25 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import {
-  ArrowLeftRight,
-  LayoutGrid,
-  Minimize2,
-  PieChart,
-  PiggyBank,
-  Receipt,
-  Wallet,
-} from "lucide-react";
+import { Minimize2, Wallet } from "lucide-react";
+import { isNavItemActive, navItems } from "./nav";
 
 const STORAGE_KEY = "finance-sidebar-collapsed";
-
-const nav = [
-  { href: "/", label: "Overview", icon: LayoutGrid },
-  { href: "/transactions", label: "Transactions", icon: ArrowLeftRight },
-  { href: "/budgets", label: "Budgets", icon: PieChart },
-  { href: "/pots", label: "Pots", icon: PiggyBank },
-  { href: "/recurring-bills", label: "Recurring Bills", icon: Receipt },
-] as const;
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -51,7 +36,7 @@ export function Sidebar() {
 
   return (
     <aside
-      className={`flex h-full shrink-0 flex-col bg-grey-900 text-white transition-[width] duration-200 ease-out ${
+      className={`hidden h-full shrink-0 flex-col bg-grey-900 text-white transition-[width] duration-200 ease-out md:flex ${
         collapsed ? "w-[90px]" : "w-[300px]"
       }`}
     >
@@ -86,11 +71,8 @@ export function Sidebar() {
       </div>
 
       <nav className="flex flex-1 flex-col gap-1 px-4" aria-label="Primary">
-        {nav.map(({ href, label, icon: Icon }) => {
-          const active =
-            href === "/"
-              ? pathname === "/"
-              : pathname === href || pathname.startsWith(`${href}/`);
+        {navItems.map(({ href, label, icon: Icon }) => {
+          const active = isNavItemActive(href, pathname);
           return (
             <Link
               key={href}

@@ -19,3 +19,14 @@ export function getLatestTransactions(
 export function sumAmounts(transactions: { amount: number }[]): number {
   return transactions.reduce((sum, t) => sum + t.amount, 0);
 }
+
+/** Latest transactions in a category, newest first */
+export function getLatestTransactionsForCategory(
+  data: FinanceData,
+  category: string,
+  limit = 3,
+): Transaction[] {
+  return getLatestTransactions(data, data.transactions.length).filter(
+    (t) => t.category === category,
+  ).slice(0, limit);
+}

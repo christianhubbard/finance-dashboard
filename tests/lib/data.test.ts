@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { getLatestTransactions, sumAmounts } from "@/lib/data";
+import {
+  getLatestTransactions,
+  getLatestTransactionsForCategory,
+  sumAmounts,
+} from "@/lib/data";
 import type { FinanceData, Transaction } from "@/lib/types";
 
 const tx = (date: string, amount = 0, name = date): Transaction => ({
@@ -53,5 +57,31 @@ describe("getLatestTransactions", () => {
     const original = [...data.transactions];
     getLatestTransactions(data, 2);
     expect(data.transactions).toEqual(original);
+  });
+});
+
+describe("getLatestTransactionsForCategory", () => {
+  const data = {
+    transactions: [
+      { ...tx("2024-01-01", 1, "a"), category: "Groceries" },
+      { ...tx("2024-03-15", 2, "b"), category: "Bills" },
+      { ...tx("2024-02-10", 3, "c"), category: "Groceries" },
+      { ...tx("2024-05-20", 4, "d"), category: "Groceries" },
+    ],
+  } as unknown as FinanceData;
+
+  it("returns only the requested category, newest first", () => {
+    const result = getLatestTransactionsForCategory(data, "Groceries").map(
+      (t) => t.name,
+    );
+    expect(result).toEqual(["d", "c", "a"]);
+  });
+
+  it("respects the limit", () => {
+    expect(getLatestTransactionsForCategory(data, "Groceries", 2)).toHaveLength(2);
+  });
+
+  it("returns an empty array for unknown categories", () => {
+    expect(getLatestTransactionsForCategory(data, "Nope")).toEqual([]);
   });
 });

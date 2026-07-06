@@ -16,3 +16,13 @@ export function formatCurrency(amount: number, sign: "always" | "auto" = "auto")
 
   return formatted;
 }
+
+/** Formats an ISO date (YYYY-MM-DD) as e.g. "Nov 28, 2022" */
+export function formatDisplayDate(iso: string): string {
+  const d = new Date(iso + "T12:00:00");
+  return new Intl.DateTimeFormat("en-US", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(d);
+}

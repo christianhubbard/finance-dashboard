@@ -4,7 +4,7 @@ type PlaceholderPageProps = {
 
 export function PlaceholderPage({ title }: PlaceholderPageProps) {
   return (
-    <main className="min-h-0 flex-1 px-10 pb-16 pt-10">
+    <main className="min-h-0 flex-1 px-4 py-6 sm:px-6 md:px-10 md:pb-16 md:pt-10">
       <h1 className="text-preset-1 font-bold tracking-tight text-grey-900">
         {title}
       </h1>
