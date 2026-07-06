@@ -51,7 +51,7 @@ export function Sidebar() {
 
   return (
     <aside
-      className={`flex h-full shrink-0 flex-col bg-grey-900 text-white transition-[width] duration-200 ease-out ${
+      className={`flex h-full shrink-0 flex-col bg-red-600 text-white transition-[width] duration-200 ease-out ${
         collapsed ? "w-[90px]" : "w-[300px]"
       }`}
     >
