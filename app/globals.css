@@ -1,13 +1,44 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: var(--color-beige-100);
-  --foreground: var(--color-grey-900);
+  --background: #f8f4f0;
+  --foreground: #201f24;
+  --card: #ffffff;
+  --muted: #f8f4f0;
+  --muted-foreground: #696868;
+  --border: #e8e4df;
+  --inverse: #201f24;
+  --inverse-foreground: #ffffff;
+  --inverse-muted: #f2f2f2;
+  --sidebar: #201f24;
+}
+
+.dark {
+  --background: #14120b;
+  --foreground: #edecec;
+  --card: #1b1913;
+  --muted: #26241e;
+  --muted-foreground: #a8a7a4;
+  --border: #2b2923;
+  --inverse: #2b2923;
+  --inverse-foreground: #edecec;
+  --inverse-muted: #b3b3b3;
+  --sidebar: #0c0b08;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-inverse: var(--inverse);
+  --color-inverse-foreground: var(--inverse-foreground);
+  --color-inverse-muted: var(--inverse-muted);
+  --color-sidebar: var(--sidebar);
   --font-sans: var(--font-public-sans);
 
   /* Neutrals */
@@ -38,9 +69,16 @@
   --color-extended-orange: #be6c49;
 }
 
+.dark {
+  --color-beige-100: var(--muted);
+  --color-grey-900: var(--foreground);
+  --color-grey-500: var(--muted-foreground);
+  --color-grey-100: var(--inverse-muted);
+}
+
 body {
-  background: var(--color-beige-100);
-  color: var(--color-grey-900);
+  background: var(--background);
+  color: var(--foreground);
   font-family: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
 }
 

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Public_Sans } from "next/font/google";
 import "./globals.css";
 import { AppShell } from "@/components/shell/AppShell";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { ThemeScript } from "@/components/theme/theme-script";
 
 const publicSans = Public_Sans({
   variable: "--font-public-sans",
@@ -23,9 +25,13 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${publicSans.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex font-sans text-grey-900">
-        <AppShell>{children}</AppShell>
+      <body className="flex min-h-full font-sans text-foreground">
+        <ThemeScript />
+        <ThemeProvider>
+          <AppShell>{children}</AppShell>
+        </ThemeProvider>
       </body>
     </html>
   );
