@@ -4,7 +4,7 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
+  useLayoutEffect,
   useState,
   type ReactNode,
 } from "react";
@@ -28,7 +28,8 @@ function applyThemeClass(theme: ColorTheme) {
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<ColorTheme>("light");
 
-  useEffect(() => {
+  // Sync before paint so the toggle never reads stale "light" after ThemeScript applied "dark".
+  useLayoutEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       const initial: ColorTheme = saved === "dark" ? "dark" : "light";
