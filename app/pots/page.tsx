@@ -1,5 +1,14 @@
-import { PlaceholderPage } from "@/components/shell/PlaceholderPage";
+import { PotsView } from "@/components/pots/PotsView";
+import { getFinanceData } from "@/lib/data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "finance — Pots",
+  description: "Savings pots",
+};
 
 export default function PotsPage() {
-  return <PlaceholderPage title="Pots" />;
+  const data = getFinanceData();
+
+  return <PotsView initialPots={data.pots} />;
 }
