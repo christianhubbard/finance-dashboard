@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { formatCurrency } from "@/lib/format";
+import { formatCurrency, formatDisplayDate } from "@/lib/format";
+
+describe("formatDisplayDate", () => {
+  it("formats ISO dates for display", () => {
+    expect(formatDisplayDate("2022-11-27")).toBe("Nov 27, 2022");
+  });
+});
 
 describe("formatCurrency", () => {
   it("formats positive amounts with no leading sign by default", () => {
