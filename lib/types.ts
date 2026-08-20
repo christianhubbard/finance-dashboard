@@ -29,6 +29,13 @@ export type Budget = {
 
 export type RecurringBill = Transaction & { recurring: true };
 
+/** Display status for the Recurring Bills page. `dueSoon` in JSON maps to `overdue`. */
+export type RecurringBillStatus = "paid" | "upcoming" | "overdue";
+
+export type RecurringBillWithStatus = RecurringBill & {
+  status: RecurringBillStatus;
+};
+
 export type FinanceData = {
   balance: Balance;
   pots: Pot[];
