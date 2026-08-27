@@ -9,12 +9,13 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). Sidebar links route to placeholder pages except **Overview** (`/`), which renders balance cards, pots summary, latest transactions, budgets (donut), and recurring bill stats.
+Open [http://localhost:3000](http://localhost:3000). **Overview** (`/`) renders balance cards, pots summary, latest transactions, budgets (donut), and recurring bill stats. **Transactions** (`/transactions`) lists every row from the mock data with search, category, sort, and pagination. Other sidebar pages (Budgets, Pots, Recurring Bills) are placeholders.
 
 ## Scripts
 
-- `npm run dev` — dev server (Turbopack)
+- `npm run dev` — dev server (webpack; use `npm run dev:turbo` for Turbopack)
 - `npm run build` — production build
 - `npm run lint` — ESLint
+- `npm test` — Vitest
 
 Typography: **Public Sans** via `next/font`.
