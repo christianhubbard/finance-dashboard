@@ -110,6 +110,182 @@
       "date": "2022-11-20",
       "amount": -6.5,
       "recurring": false
+    },
+    {
+      "avatar": "urban",
+      "name": "City Transit",
+      "category": "Transportation",
+      "date": "2022-11-19",
+      "amount": -12.5,
+      "recurring": false
+    },
+    {
+      "avatar": "trail",
+      "name": "Swift Rides",
+      "category": "Transportation",
+      "date": "2022-11-18",
+      "amount": -18.75,
+      "recurring": false
+    },
+    {
+      "avatar": "north",
+      "name": "Metro Monthly Pass",
+      "category": "Transportation",
+      "date": "2022-11-17",
+      "amount": -96,
+      "recurring": true
+    },
+    {
+      "avatar": "ledger",
+      "name": "North Campus Bookstore",
+      "category": "Education",
+      "date": "2022-11-16",
+      "amount": -42,
+      "recurring": false
+    },
+    {
+      "avatar": "spark",
+      "name": "Skill Workshop",
+      "category": "Education",
+      "date": "2022-11-15",
+      "amount": -75,
+      "recurring": false
+    },
+    {
+      "avatar": "floral",
+      "name": "Greenleaf Spa",
+      "category": "Lifestyle",
+      "date": "2022-11-14",
+      "amount": -68,
+      "recurring": false
+    },
+    {
+      "avatar": "water",
+      "name": "Harbor Yoga",
+      "category": "Lifestyle",
+      "date": "2022-11-13",
+      "amount": -22,
+      "recurring": false
+    },
+    {
+      "avatar": "ember",
+      "name": "Market Street Outfitters",
+      "category": "Shopping",
+      "date": "2022-11-12",
+      "amount": -54.99,
+      "recurring": false
+    },
+    {
+      "avatar": "net",
+      "name": "Echo Game Store",
+      "category": "Shopping",
+      "date": "2022-11-11",
+      "amount": -39.99,
+      "recurring": false
+    },
+    {
+      "avatar": "floral",
+      "name": "Bravo Zen Spa",
+      "category": "Personal Care",
+      "date": "2022-11-10",
+      "amount": -25,
+      "recurring": false
+    },
+    {
+      "avatar": "ledger",
+      "name": "Alpha Analytics",
+      "category": "General",
+      "date": "2022-11-09",
+      "amount": 450,
+      "recurring": false
+    },
+    {
+      "avatar": "spark",
+      "name": "Charlie Electric Co.",
+      "category": "Bills",
+      "date": "2022-11-08",
+      "amount": -88.4,
+      "recurring": true
+    },
+    {
+      "avatar": "urban",
+      "name": "Fresh Basket",
+      "category": "Groceries",
+      "date": "2022-11-07",
+      "amount": -32.1,
+      "recurring": false
+    },
+    {
+      "avatar": "trail",
+      "name": "Nimbus Cinema",
+      "category": "Entertainment",
+      "date": "2022-11-06",
+      "amount": -14,
+      "recurring": false
+    },
+    {
+      "avatar": "savory",
+      "name": "Byte & Brew",
+      "category": "Dining Out",
+      "date": "2022-11-05",
+      "amount": -11.25,
+      "recurring": false
+    },
+    {
+      "avatar": "north",
+      "name": "Pine Street Market",
+      "category": "Groceries",
+      "date": "2022-11-04",
+      "amount": -47.8,
+      "recurring": false
+    },
+    {
+      "avatar": "emma",
+      "name": "Riverside Books",
+      "category": "Education",
+      "date": "2022-11-03",
+      "amount": -19.5,
+      "recurring": false
+    },
+    {
+      "avatar": "floral",
+      "name": "Canvas Studio",
+      "category": "Lifestyle",
+      "date": "2022-11-02",
+      "amount": -30,
+      "recurring": false
+    },
+    {
+      "avatar": "urban",
+      "name": "Downtown Parking",
+      "category": "Transportation",
+      "date": "2022-11-01",
+      "amount": -8,
+      "recurring": false
+    },
+    {
+      "avatar": "ember",
+      "name": "Willow Boutique",
+      "category": "Shopping",
+      "date": "2022-10-31",
+      "amount": -120,
+      "recurring": false
+    },
+    {
+      "avatar": "net",
+      "name": "NetStream Plus",
+      "category": "Entertainment",
+      "date": "2022-10-30",
+      "amount": -9.99,
+      "recurring": true
+    },
+    {
+      "avatar": "ledger",
+      "name": "Payroll Deposit",
+      "category": "General",
+      "date": "2022-10-28",
+      "amount": 1900,
+      "recurring": false
     }
   ],
   "budgets": [
