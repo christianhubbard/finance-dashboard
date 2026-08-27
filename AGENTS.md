@@ -21,5 +21,5 @@ This is a self-contained Next.js 16 finance dashboard with no external services 
 
 - Node.js 22 LTS is used (managed via nvm). The update script handles `nvm install 22 --default` and `npm install`.
 - The dev server uses Turbopack and starts very quickly (~250ms). No environment variables or `.env` files are needed.
-- Only the Overview page (`/`) has real content; other sidebar pages (Transactions, Budgets, Pots, Recurring Bills) are placeholders.
-- There are no automated tests configured in this project — only `npm run lint` for quality checks.
+- Overview (`/`) and Transactions (`/transactions`) have real content. Other sidebar pages (Budgets, Pots, Recurring Bills) are placeholders.
+- Quality checks: `npm run lint` and `npm test` (Vitest).
