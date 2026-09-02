@@ -110,6 +110,262 @@
       "date": "2022-11-20",
       "amount": -6.5,
       "recurring": false
+    },
+    {
+      "avatar": "trail",
+      "name": "Green Leaf Transit",
+      "category": "Transportation",
+      "date": "2022-11-19",
+      "amount": -42,
+      "recurring": true
+    },
+    {
+      "avatar": "north",
+      "name": "Harbor University",
+      "category": "Education",
+      "date": "2022-11-18",
+      "amount": -120,
+      "recurring": false
+    },
+    {
+      "avatar": "floral",
+      "name": "Aura Spa",
+      "category": "Lifestyle",
+      "date": "2022-11-17",
+      "amount": -65,
+      "recurring": false
+    },
+    {
+      "avatar": "urban",
+      "name": "Pixel Market",
+      "category": "Shopping",
+      "date": "2022-11-16",
+      "amount": -89.99,
+      "recurring": false
+    },
+    {
+      "avatar": "net",
+      "name": "ByteStream Cinema",
+      "category": "Entertainment",
+      "date": "2022-11-15",
+      "amount": -18.5,
+      "recurring": false
+    },
+    {
+      "avatar": "water",
+      "name": "Aqua Utilities",
+      "category": "Bills",
+      "date": "2022-11-14",
+      "amount": -54.2,
+      "recurring": true
+    },
+    {
+      "avatar": "north",
+      "name": "Fresh Basket",
+      "category": "Groceries",
+      "date": "2022-11-13",
+      "amount": -73.4,
+      "recurring": false
+    },
+    {
+      "avatar": "savory",
+      "name": "Noodle House",
+      "category": "Dining Out",
+      "date": "2022-11-12",
+      "amount": -22.8,
+      "recurring": false
+    },
+    {
+      "avatar": "floral",
+      "name": "Glow Cosmetics",
+      "category": "Personal Care",
+      "date": "2022-11-11",
+      "amount": -28,
+      "recurring": false
+    },
+    {
+      "avatar": "ledger",
+      "name": "Payroll Deposit",
+      "category": "General",
+      "date": "2022-11-10",
+      "amount": 1850,
+      "recurring": true
+    },
+    {
+      "avatar": "trail",
+      "name": "Metro Pass",
+      "category": "Transportation",
+      "date": "2022-11-09",
+      "amount": -36,
+      "recurring": true
+    },
+    {
+      "avatar": "north",
+      "name": "Skillcraft Academy",
+      "category": "Education",
+      "date": "2022-11-08",
+      "amount": -95,
+      "recurring": false
+    },
+    {
+      "avatar": "floral",
+      "name": "Sunset Yoga",
+      "category": "Lifestyle",
+      "date": "2022-11-07",
+      "amount": -18,
+      "recurring": true
+    },
+    {
+      "avatar": "urban",
+      "name": "Thread & Needle",
+      "category": "Shopping",
+      "date": "2022-11-06",
+      "amount": -47.25,
+      "recurring": false
+    },
+    {
+      "avatar": "trail",
+      "name": "Arcade Alley",
+      "category": "Entertainment",
+      "date": "2022-11-05",
+      "amount": -15,
+      "recurring": false
+    },
+    {
+      "avatar": "spark",
+      "name": "Spark Electric",
+      "category": "Bills",
+      "date": "2022-11-04",
+      "amount": -80,
+      "recurring": true
+    },
+    {
+      "avatar": "north",
+      "name": "Northwind Traders",
+      "category": "Groceries",
+      "date": "2022-11-03",
+      "amount": -51.1,
+      "recurring": false
+    },
+    {
+      "avatar": "savory",
+      "name": "Savory Eats",
+      "category": "Dining Out",
+      "date": "2022-11-02",
+      "amount": -31.4,
+      "recurring": false
+    },
+    {
+      "avatar": "floral",
+      "name": "Floral Boutique",
+      "category": "Personal Care",
+      "date": "2022-11-01",
+      "amount": -19.5,
+      "recurring": false
+    },
+    {
+      "avatar": "ledger",
+      "name": "Tax Refund",
+      "category": "General",
+      "date": "2022-10-31",
+      "amount": 240,
+      "recurring": false
+    },
+    {
+      "avatar": "trail",
+      "name": "City Transit",
+      "category": "Transportation",
+      "date": "2022-10-30",
+      "amount": -2.75,
+      "recurring": false
+    },
+    {
+      "avatar": "net",
+      "name": "Online Course Hub",
+      "category": "Education",
+      "date": "2022-10-29",
+      "amount": -49,
+      "recurring": false
+    },
+    {
+      "avatar": "ember",
+      "name": "Riverside Gym",
+      "category": "Lifestyle",
+      "date": "2022-10-28",
+      "amount": -39.99,
+      "recurring": true
+    },
+    {
+      "avatar": "urban",
+      "name": "Book Nook",
+      "category": "Shopping",
+      "date": "2022-10-27",
+      "amount": -16.8,
+      "recurring": false
+    },
+    {
+      "avatar": "trail",
+      "name": "Concert Hall",
+      "category": "Entertainment",
+      "date": "2022-10-26",
+      "amount": -85,
+      "recurring": false
+    },
+    {
+      "avatar": "water",
+      "name": "City Water Works",
+      "category": "Bills",
+      "date": "2022-10-25",
+      "amount": -30,
+      "recurring": true
+    },
+    {
+      "avatar": "north",
+      "name": "Corner Market",
+      "category": "Groceries",
+      "date": "2022-10-24",
+      "amount": -24.6,
+      "recurring": false
+    },
+    {
+      "avatar": "ember",
+      "name": "Ember Coffee Co.",
+      "category": "Dining Out",
+      "date": "2022-10-23",
+      "amount": -5.75,
+      "recurring": false
+    },
+    {
+      "avatar": "emma",
+      "name": "Emma Richardson",
+      "category": "General",
+      "date": "2022-10-22",
+      "amount": -40,
+      "recurring": false
+    },
+    {
+      "avatar": "ledger",
+      "name": "Urban Ledger",
+      "category": "General",
+      "date": "2022-10-21",
+      "amount": 320,
+      "recurring": false
+    },
+    {
+      "avatar": "ember",
+      "name": "Fast Lane Fuel",
+      "category": "Transportation",
+      "date": "2022-10-20",
+      "amount": -48.5,
+      "recurring": false
+    },
+    {
+      "avatar": "net",
+      "name": "Studio Workshops",
+      "category": "Education",
+      "date": "2022-10-19",
+      "amount": -75,
+      "recurring": false
     }
   ],
   "budgets": [

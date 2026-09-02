@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatCurrency } from "@/lib/format";
+import { formatCurrency, formatDisplayDate } from "@/lib/format";
 
 describe("formatCurrency", () => {
   it("formats positive amounts with no leading sign by default", () => {
@@ -22,5 +22,15 @@ describe("formatCurrency", () => {
   it("always shows two fraction digits", () => {
     expect(formatCurrency(7)).toBe("$7.00");
     expect(formatCurrency(7.1)).toBe("$7.10");
+  });
+});
+
+describe("formatDisplayDate", () => {
+  it("formats a date-only ISO string as a short US date", () => {
+    expect(formatDisplayDate("2024-08-19")).toBe("Aug 19, 2024");
+  });
+
+  it("does not shift the calendar day around UTC midnight", () => {
+    expect(formatDisplayDate("2022-11-28")).toBe("Nov 28, 2022");
   });
 });
