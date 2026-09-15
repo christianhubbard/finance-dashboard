@@ -6,9 +6,14 @@ type BalanceCardsProps = {
 };
 
 export function BalanceCards({ balance }: BalanceCardsProps) {
+  const currentBalanceTone =
+    balance.current >= 0 ? "bg-secondary-green" : "bg-secondary-red";
+
   return (
     <div className="grid grid-cols-3 gap-6">
-      <div className="@container min-w-0 overflow-hidden rounded-2xl bg-grey-900 px-6 py-6 text-white">
+      <div
+        className={`@container min-w-0 overflow-hidden rounded-2xl px-6 py-6 text-white ${currentBalanceTone}`}
+      >
         <p className="text-preset-4 text-grey-100">Current Balance</p>
         <p className="mt-4 text-balance-amount font-bold tracking-tight tabular-nums">
           {formatCurrency(balance.current)}

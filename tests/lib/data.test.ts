@@ -1,6 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { getLatestTransactions, sumAmounts } from "@/lib/data";
-import type { FinanceData, Transaction } from "@/lib/types";
+import {
+  getLatestTransactions,
+  getRecurringBillsSummary,
+  sumAmounts,
+} from "@/lib/data";
+import type { FinanceData, RecurringBill, Transaction } from "@/lib/types";
 
 const tx = (date: string, amount = 0, name = date): Transaction => ({
   avatar: "x",
@@ -53,5 +57,56 @@ describe("getLatestTransactions", () => {
     const original = [...data.transactions];
     getLatestTransactions(data, 2);
     expect(data.transactions).toEqual(original);
+  });
+});
+
+const bill = (
+  name: string,
+  amount: number,
+  date = "2024-01-01",
+): RecurringBill => ({
+  avatar: "x",
+  name,
+  category: "Bills",
+  date,
+  amount,
+  recurring: true,
+});
+
+describe("getRecurringBillsSummary", () => {
+  const data = {
+    recurringBills: {
+      paid: [bill("Netflix", -15), bill("Spotify", -10)],
+      upcoming: [bill("Rent", -1200)],
+      dueSoon: [bill("Power", -80), bill("Water", -45)],
+    },
+  } as unknown as FinanceData;
+
+  it("counts every bill in total and rolls due-soon into upcoming", () => {
+    const summary = getRecurringBillsSummary(data);
+    expect(summary.totalCount).toBe(5);
+    expect(summary.paidCount).toBe(2);
+    expect(summary.upcomingCount).toBe(3);
+  });
+
+  it("sums absolute amounts and includes due-soon in upcoming", () => {
+    const summary = getRecurringBillsSummary(data);
+    expect(summary.totalAmount).toBe(1350);
+    expect(summary.paidAmount).toBe(25);
+    expect(summary.upcomingAmount).toBe(1325);
+  });
+
+  it("returns zeros when every bucket is empty", () => {
+    const empty = {
+      recurringBills: { paid: [], upcoming: [], dueSoon: [] },
+    } as unknown as FinanceData;
+    expect(getRecurringBillsSummary(empty)).toEqual({
+      totalCount: 0,
+      totalAmount: 0,
+      paidCount: 0,
+      paidAmount: 0,
+      upcomingCount: 0,
+      upcomingAmount: 0,
+    });
   });
 });

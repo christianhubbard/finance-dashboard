@@ -48,4 +48,12 @@ describe("RecurringBillsCard", () => {
     expect(screen.getByText("1 bills")).toBeInTheDocument();
     expect(screen.getByText("3 bills")).toBeInTheDocument();
   });
+
+  it("links See Details to the recurring bills page", () => {
+    render(<RecurringBillsCard data={data} />);
+    expect(screen.getByRole("link", { name: "See Details" })).toHaveAttribute(
+      "href",
+      "/recurring-bills",
+    );
+  });
 });

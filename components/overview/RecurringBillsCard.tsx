@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { formatCurrency } from "@/lib/format";
 import { sumAmounts } from "@/lib/data";
@@ -21,7 +22,15 @@ export function RecurringBillsCard({ data }: RecurringBillsCardProps) {
 
   return (
     <Card>
-      <h2 className="text-preset-2 text-grey-900">Recurring Bills</h2>
+      <div className="flex items-start justify-between gap-4">
+        <h2 className="text-preset-2 text-grey-900">Recurring Bills</h2>
+        <Link
+          href="/recurring-bills"
+          className="text-preset-4 font-medium text-grey-500 underline-offset-4 hover:text-grey-900 hover:underline"
+        >
+          See Details
+        </Link>
+      </div>
       <ul className="mt-6 flex flex-col gap-3">
         <li className="flex items-center justify-between gap-4 rounded-xl border border-beige-100 bg-beige-100/60 px-4 py-4">
           <div>
