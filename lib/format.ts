@@ -16,3 +16,14 @@ export function formatCurrency(amount: number, sign: "always" | "auto" = "auto")
 
   return formatted;
 }
+
+/** Formats an ISO date-only string (e.g. `2024-08-19`) as `Aug 19, 2024`. */
+export function formatDisplayDate(iso: string): string {
+  // Midday avoids the date shifting a day when parsed in a negative-offset timezone.
+  const d = new Date(iso + "T12:00:00");
+  return new Intl.DateTimeFormat("en-US", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(d);
+}
