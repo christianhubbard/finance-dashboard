@@ -17,5 +17,20 @@ describe("BalanceCards", () => {
     expect(screen.getByText("$4,836.00")).toBeInTheDocument();
     expect(screen.getByText("+$3,814.25")).toBeInTheDocument();
     expect(screen.getByText("-$1,700.50")).toBeInTheDocument();
+    expect(screen.getByText("Current Balance").parentElement).toHaveClass(
+      "bg-secondary-green",
+    );
+  });
+
+  it("uses red when the current balance is negative", () => {
+    render(
+      <BalanceCards
+        balance={{ current: -120.5, income: 0, expenses: 120.5 }}
+      />,
+    );
+
+    expect(screen.getByText("Current Balance").parentElement).toHaveClass(
+      "bg-secondary-red",
+    );
   });
 });
