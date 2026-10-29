@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { getLatestTransactions, sumAmounts } from "@/lib/data";
+import {
+  getBudgetRemaining,
+  getLatestTransactions,
+  getLatestTransactionsByCategory,
+  sumAmounts,
+} from "@/lib/data";
 import type { FinanceData, Transaction } from "@/lib/types";
 
 const tx = (date: string, amount = 0, name = date): Transaction => ({
@@ -53,5 +58,36 @@ describe("getLatestTransactions", () => {
     const original = [...data.transactions];
     getLatestTransactions(data, 2);
     expect(data.transactions).toEqual(original);
+  });
+});
+
+describe("getLatestTransactionsByCategory", () => {
+  const data = {
+    transactions: [
+      { ...tx("2024-01-01", 1, "a"), category: "Bills" },
+      { ...tx("2024-03-15", 2, "b"), category: "Groceries" },
+      { ...tx("2024-02-10", 3, "c"), category: "Bills" },
+      { ...tx("2024-05-20", 4, "d"), category: "Bills" },
+      { ...tx("2024-04-01", 5, "e"), category: "Bills" },
+    ],
+  } as unknown as FinanceData;
+
+  it("returns only that category, newest first, capped at 3 by default", () => {
+    const result = getLatestTransactionsByCategory(data, "Bills").map((t) => t.name);
+    expect(result).toEqual(["d", "e", "c"]);
+  });
+
+  it("returns an empty list for a category with no transactions", () => {
+    expect(getLatestTransactionsByCategory(data, "Travel")).toEqual([]);
+  });
+});
+
+describe("getBudgetRemaining", () => {
+  it("returns maximum minus spent", () => {
+    expect(getBudgetRemaining({ category: "x", maximum: 300, spent: 120, theme: "green" })).toBe(180);
+  });
+
+  it("never goes below zero", () => {
+    expect(getBudgetRemaining({ category: "x", maximum: 50, spent: 80, theme: "green" })).toBe(0);
   });
 });
