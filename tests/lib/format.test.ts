@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatCurrency } from "@/lib/format";
+import { formatCurrency, formatDisplayDate } from "@/lib/format";
 
 describe("formatCurrency", () => {
   it("formats positive amounts with no leading sign by default", () => {
@@ -17,6 +17,10 @@ describe("formatCurrency", () => {
   it('respects sign="always" for negatives but does not add + for positives', () => {
     expect(formatCurrency(-12, "always")).toBe("-$12.00");
     expect(formatCurrency(12, "always")).toBe("$12.00");
+  });
+
+  it("formats an ISO date without shifting the calendar day", () => {
+    expect(formatDisplayDate("2024-08-19")).toBe("Aug 19, 2024");
   });
 
   it("always shows two fraction digits", () => {
