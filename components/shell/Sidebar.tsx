@@ -95,10 +95,10 @@ export function Sidebar() {
             <Link
               key={href}
               href={href}
-              className={`flex items-center gap-4 rounded-xl px-4 py-3 text-preset-4 font-medium transition-colors ${
+              className={`flex items-center gap-4 rounded-xl border px-4 py-3 text-preset-4 font-medium transition-colors ${
                 active
-                  ? "border border-white/10 bg-grey-500/30 text-white"
-                  : "text-grey-300 hover:bg-white/5 hover:text-white"
+                  ? "border-white/10 bg-grey-500/30 text-white"
+                  : "border-transparent text-grey-300 hover:bg-white/5 hover:text-white"
               } ${collapsed ? "justify-center px-2" : ""}`}
               title={collapsed ? label : undefined}
             >
