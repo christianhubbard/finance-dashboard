@@ -1,13 +1,31 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: var(--color-beige-100);
   --foreground: var(--color-grey-900);
+  --card: var(--color-white);
+  --muted: var(--color-grey-500);
+  --subtle: var(--color-beige-100);
+  color-scheme: light;
+}
+
+.dark {
+  --background: #18171c;
+  --foreground: var(--color-grey-100);
+  --card: #232228;
+  --muted: var(--color-grey-300);
+  --subtle: #34333a;
+  color-scheme: dark;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
   --font-sans: var(--font-public-sans);
 
   /* Neutrals */
@@ -39,8 +57,8 @@
 }
 
 body {
-  background: var(--color-beige-100);
-  color: var(--color-grey-900);
+  background: var(--background);
+  color: var(--foreground);
   font-family: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
 }
 

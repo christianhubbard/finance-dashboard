@@ -15,15 +15,15 @@ export function PotsSummary({ pots }: PotsSummaryProps) {
     <Card>
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h2 className="text-preset-2 text-grey-900">Pots</h2>
-          <p className="mt-4 text-preset-4 text-grey-500">Total saved</p>
-          <p className="mt-2 text-preset-1 font-bold tracking-tight text-grey-900">
+          <h2 className="text-preset-2 text-foreground">Pots</h2>
+          <p className="mt-4 text-preset-4 text-muted">Total saved</p>
+          <p className="mt-2 text-preset-1 font-bold tracking-tight text-foreground">
             {formatCurrency(totalSaved)}
           </p>
         </div>
         <Link
           href="/pots"
-          className="text-preset-4 font-medium text-grey-500 underline-offset-4 hover:text-grey-900 hover:underline"
+          className="text-preset-4 font-medium text-muted underline-offset-4 hover:text-foreground hover:underline"
         >
           See Details
         </Link>
@@ -35,18 +35,18 @@ export function PotsSummary({ pots }: PotsSummaryProps) {
           return (
             <li key={pot.name}>
               <div className="flex items-center justify-between gap-4">
-                <span className="text-preset-4-bold text-grey-900">{pot.name}</span>
+                <span className="text-preset-4-bold text-foreground">{pot.name}</span>
                 <div className="text-preset-4 text-right">
                   <span className="font-bold text-secondary-red">
                     {formatCurrency(-pot.total)}
                   </span>
-                  <span className="text-grey-500">
+                  <span className="text-muted">
                     {" "}
                     of {formatCurrency(pot.target)}
                   </span>
                 </div>
               </div>
-              <div className="mt-2 h-1 overflow-hidden rounded-full bg-beige-100">
+              <div className="mt-2 h-1 overflow-hidden rounded-full bg-subtle">
                 <div
                   className="h-full rounded-full transition-[width]"
                   style={{
