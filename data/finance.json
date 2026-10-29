@@ -110,6 +110,326 @@
       "date": "2022-11-20",
       "amount": -6.5,
       "recurring": false
+    },
+    {
+      "avatar": "emma",
+      "name": "Payroll Deposit",
+      "category": "General",
+      "date": "2022-10-31",
+      "amount": 1850,
+      "recurring": false
+    },
+    {
+      "avatar": "spark",
+      "name": "City Transit",
+      "category": "Transportation",
+      "date": "2022-10-30",
+      "amount": -42.75,
+      "recurring": true
+    },
+    {
+      "avatar": "urban",
+      "name": "Metro Books",
+      "category": "Education",
+      "date": "2022-10-29",
+      "amount": -64,
+      "recurring": false
+    },
+    {
+      "avatar": "floral",
+      "name": "Weekend Market",
+      "category": "Lifestyle",
+      "date": "2022-10-28",
+      "amount": -28.4,
+      "recurring": false
+    },
+    {
+      "avatar": "savory",
+      "name": "Harbor Outfitters",
+      "category": "Shopping",
+      "date": "2022-10-27",
+      "amount": -120,
+      "recurring": false
+    },
+    {
+      "avatar": "north",
+      "name": "River Grocery",
+      "category": "Groceries",
+      "date": "2022-10-26",
+      "amount": -73.2,
+      "recurring": false
+    },
+    {
+      "avatar": "ember",
+      "name": "Late Night Cinema",
+      "category": "Entertainment",
+      "date": "2022-10-25",
+      "amount": -18,
+      "recurring": false
+    },
+    {
+      "avatar": "ledger",
+      "name": "Freelance Invoice",
+      "category": "General",
+      "date": "2022-10-24",
+      "amount": 640,
+      "recurring": false
+    },
+    {
+      "avatar": "trail",
+      "name": "Airport Shuttle",
+      "category": "Transportation",
+      "date": "2022-10-23",
+      "amount": -55,
+      "recurring": false
+    },
+    {
+      "avatar": "water",
+      "name": "Online Course",
+      "category": "Education",
+      "date": "2022-10-22",
+      "amount": -89,
+      "recurring": false
+    },
+    {
+      "avatar": "net",
+      "name": "Studio Membership",
+      "category": "Lifestyle",
+      "date": "2022-10-21",
+      "amount": -35,
+      "recurring": true
+    },
+    {
+      "avatar": "emma",
+      "name": "Corner Pharmacy",
+      "category": "Personal Care",
+      "date": "2022-10-20",
+      "amount": -22.15,
+      "recurring": false
+    },
+    {
+      "avatar": "urban",
+      "name": "Home Hardware",
+      "category": "Shopping",
+      "date": "2022-10-19",
+      "amount": -210.4,
+      "recurring": false
+    },
+    {
+      "avatar": "spark",
+      "name": "Power Bill",
+      "category": "Bills",
+      "date": "2022-10-18",
+      "amount": -980,
+      "recurring": true
+    },
+    {
+      "avatar": "floral",
+      "name": "Farmers Market",
+      "category": "Groceries",
+      "date": "2022-10-17",
+      "amount": -46.8,
+      "recurring": false
+    },
+    {
+      "avatar": "savory",
+      "name": "Lunch Counter",
+      "category": "Dining Out",
+      "date": "2022-10-16",
+      "amount": -19.25,
+      "recurring": false
+    },
+    {
+      "avatar": "north",
+      "name": "Concert Hall",
+      "category": "Entertainment",
+      "date": "2022-10-15",
+      "amount": -75,
+      "recurring": false
+    },
+    {
+      "avatar": "ember",
+      "name": "Language App",
+      "category": "Education",
+      "date": "2022-10-14",
+      "amount": -14.99,
+      "recurring": true
+    },
+    {
+      "avatar": "ledger",
+      "name": "Bonus Payout",
+      "category": "General",
+      "date": "2022-10-13",
+      "amount": 2500,
+      "recurring": false
+    },
+    {
+      "avatar": "trail",
+      "name": "Bike Repair",
+      "category": "Transportation",
+      "date": "2022-10-12",
+      "amount": -38,
+      "recurring": false
+    },
+    {
+      "avatar": "water",
+      "name": "Spa Day",
+      "category": "Personal Care",
+      "date": "2022-10-11",
+      "amount": -90,
+      "recurring": false
+    },
+    {
+      "avatar": "net",
+      "name": "Thrift Finds",
+      "category": "Shopping",
+      "date": "2022-10-10",
+      "amount": -27.5,
+      "recurring": false
+    },
+    {
+      "avatar": "emma",
+      "name": "Yoga Studio",
+      "category": "Lifestyle",
+      "date": "2022-10-09",
+      "amount": -40,
+      "recurring": true
+    },
+    {
+      "avatar": "urban",
+      "name": "Streaming Bundle",
+      "category": "Entertainment",
+      "date": "2022-10-08",
+      "amount": -15.99,
+      "recurring": true
+    },
+    {
+      "avatar": "spark",
+      "name": "Internet Service",
+      "category": "Bills",
+      "date": "2022-10-07",
+      "amount": -79.99,
+      "recurring": true
+    },
+    {
+      "avatar": "floral",
+      "name": "Butcher Shop",
+      "category": "Groceries",
+      "date": "2022-10-06",
+      "amount": -52.3,
+      "recurring": false
+    },
+    {
+      "avatar": "savory",
+      "name": "Dinner Reservation",
+      "category": "Dining Out",
+      "date": "2022-10-05",
+      "amount": -86,
+      "recurring": false
+    },
+    {
+      "avatar": "north",
+      "name": "Textbook Exchange",
+      "category": "Education",
+      "date": "2022-10-04",
+      "amount": -33,
+      "recurring": false
+    },
+    {
+      "avatar": "ember",
+      "name": "Ride Share",
+      "category": "Transportation",
+      "date": "2022-10-03",
+      "amount": -24.6,
+      "recurring": false
+    },
+    {
+      "avatar": "ledger",
+      "name": "Tax Refund",
+      "category": "General",
+      "date": "2022-10-02",
+      "amount": 430,
+      "recurring": false
+    },
+    {
+      "avatar": "trail",
+      "name": "Climbing Gym",
+      "category": "Lifestyle",
+      "date": "2022-10-01",
+      "amount": -60,
+      "recurring": false
+    },
+    {
+      "avatar": "water",
+      "name": "Department Store",
+      "category": "Shopping",
+      "date": "2022-09-30",
+      "amount": -145,
+      "recurring": false
+    },
+    {
+      "avatar": "net",
+      "name": "Hair Salon",
+      "category": "Personal Care",
+      "date": "2022-09-29",
+      "amount": -48,
+      "recurring": false
+    },
+    {
+      "avatar": "emma",
+      "name": "Museum Tickets",
+      "category": "Entertainment",
+      "date": "2022-09-28",
+      "amount": -30,
+      "recurring": false
+    },
+    {
+      "avatar": "urban",
+      "name": "Phone Bill",
+      "category": "Bills",
+      "date": "2022-09-27",
+      "amount": -65,
+      "recurring": true
+    },
+    {
+      "avatar": "spark",
+      "name": "Wholesale Club",
+      "category": "Groceries",
+      "date": "2022-09-26",
+      "amount": -112.45,
+      "recurring": false
+    },
+    {
+      "avatar": "floral",
+      "name": "Cafe Brunch",
+      "category": "Dining Out",
+      "date": "2022-09-25",
+      "amount": -31.2,
+      "recurring": false
+    },
+    {
+      "avatar": "savory",
+      "name": "Tuition Installment",
+      "category": "Education",
+      "date": "2022-09-24",
+      "amount": -400,
+      "recurring": true
+    },
+    {
+      "avatar": "north",
+      "name": "Parking Garage",
+      "category": "Transportation",
+      "date": "2022-09-23",
+      "amount": -12,
+      "recurring": false
+    },
+    {
+      "avatar": "ember",
+      "name": "Gift Shop",
+      "category": "Shopping",
+      "date": "2022-09-22",
+      "amount": -19.99,
+      "recurring": false
     }
   ],
   "budgets": [
