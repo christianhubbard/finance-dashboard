@@ -51,7 +51,7 @@ export function Sidebar() {
 
   return (
     <aside
-      className={`flex h-full shrink-0 flex-col bg-grey-900 text-white transition-[width] duration-200 ease-out ${
+      className={`flex h-full shrink-0 flex-col bg-grey-900 text-white transition-[width] duration-200 ease-out dark:bg-midnight ${
         collapsed ? "w-[90px]" : "w-[300px]"
       }`}
     >
@@ -60,7 +60,7 @@ export function Sidebar() {
       >
         <div className="flex items-center gap-3">
           <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white/10">
-            <Wallet className="size-4 text-secondary-green" strokeWidth={2} />
+            <Wallet className="size-4 text-secondary-green dark:text-pumpkin" strokeWidth={2} />
           </div>
           {!collapsed ? (
             <span className="text-preset-2 font-bold tracking-tight">
