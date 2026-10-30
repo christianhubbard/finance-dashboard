@@ -12,11 +12,11 @@
 }
 
 .dark {
-  --background: #18171c;
-  --foreground: var(--color-grey-100);
-  --card: #232228;
-  --muted: var(--color-grey-300);
-  --subtle: #34333a;
+  --background: #140d1c;
+  --foreground: #f4ead8;
+  --card: #221630;
+  --muted: #b3a3c7;
+  --subtle: #372548;
   color-scheme: dark;
 }
 
@@ -54,12 +54,22 @@
   --color-extended-army: #9a9b97;
   --color-extended-gold: #cab361;
   --color-extended-orange: #be6c49;
+
+  /* Halloween (dark mode) */
+  --color-pumpkin: #f26b1d;
+  --color-midnight: #0b0710;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+@utility bg-moonglow {
+  background-image:
+    radial-gradient(circle at 92% 0%, rgb(242 107 29 / 0.18), transparent 32rem),
+    radial-gradient(circle at 0% 100%, rgb(130 108 176 / 0.16), transparent 36rem);
 }
 
 @utility text-preset-1 {

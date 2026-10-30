@@ -1,7 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { Moon, Sun } from "lucide-react";
+import { Ghost, Sun } from "lucide-react";
 import { COLOR_MODE_STORAGE_KEY } from "@/lib/color-mode";
 
 function subscribe(onChange: () => void) {
@@ -34,14 +34,15 @@ export function ThemeToggle() {
     }
   };
 
-  const Icon = isDark ? Sun : Moon;
+  const Icon = isDark ? Sun : Ghost;
 
   return (
     <button
       type="button"
       onClick={toggle}
-      className="flex size-10 items-center justify-center rounded-full bg-card text-foreground transition-colors hover:text-muted"
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}    >
+      className="flex size-10 items-center justify-center rounded-full bg-card text-foreground transition-colors hover:text-muted dark:text-pumpkin dark:hover:text-foreground"
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+    >
       <Icon className="size-5" strokeWidth={2} aria-hidden />
     </button>
   );

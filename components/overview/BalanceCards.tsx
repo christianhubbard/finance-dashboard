@@ -8,8 +8,8 @@ type BalanceCardsProps = {
 export function BalanceCards({ balance }: BalanceCardsProps) {
   return (
     <div className="grid grid-cols-3 gap-6">
-      <div className="@container min-w-0 overflow-hidden rounded-2xl bg-grey-900 px-6 py-6 text-white dark:bg-secondary-green">
-        <p className="text-preset-4 text-grey-100">Current Balance</p>
+      <div className="@container min-w-0 overflow-hidden rounded-2xl bg-grey-900 px-6 py-6 text-white dark:bg-pumpkin dark:text-midnight">
+        <p className="text-preset-4 text-grey-100 dark:text-midnight/80">Current Balance</p>
         <p className="mt-4 text-balance-amount font-bold tracking-tight tabular-nums">
           {formatCurrency(balance.current)}
         </p>
